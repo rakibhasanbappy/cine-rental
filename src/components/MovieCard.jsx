@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { toast } from "react-toastify";
 import tag from "../assets/tag.svg";
 import { MovieContext } from "../context";
 import { getImageUrl } from "../utility/getImageUrl";
@@ -14,6 +15,9 @@ export default function MovieCard({ movie }) {
 
     if (!found) {
       setCartData([...cartData, movie]);
+      toast.success(`${movie.title} added to cart successfully!`, {
+        position: "bottom-right",
+      });
     } else {
       alert("Item already in cart");
     }
