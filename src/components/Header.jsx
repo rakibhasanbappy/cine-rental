@@ -1,12 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import moon from "../assets/icons/moon.svg";
+import sun from "../assets/icons/sun.svg";
 import logo from "../assets/logo.svg";
 import ring from "../assets/ring.svg";
 import shoppingCart from "../assets/shopping-cart.svg";
+import { MovieContext, ThemeContext } from "../context";
 import CartDetailsModal from "./CartDetailsModal";
 
 export default function Header() {
   const [showCart, setShowCart] = useState(false);
+
+  const { cartData, setCartData } = useContext(MovieContext);
+
+  const { theme, setTheme } = useContext(ThemeContext);
 
   return (
     <header>
@@ -29,19 +35,47 @@ export default function Header() {
               className="bg-primary/20 dark:bg-primary/[7%] rounded-lg backdrop-blur-[2px] p-1 inline-block"
               href="#"
             >
-              <img src={moon} width="24" height="24" alt="" />
+              {
+                // Toggle theme
+                theme === "dark" ? (
+                  <img
+                    src={sun}
+                    width="24"
+                    height="24"
+                    alt="light"
+                    onClick={() => setTheme("light")}
+                  />
+                ) : (
+                  <img
+                    src={moon}
+                    width="24"
+                    height="24"
+                    alt="dark"
+                    onClick={() => setTheme("dark")}
+                  />
+                )
+              }
             </a>
           </li>
           <li>
             {showCart && (
-              <CartDetailsModal onClose={() => setShowCart(false)} />
+              <CartDetailsModal
+                cartData={cartData}
+                setCartData={setCartData}
+                onClose={() => setShowCart(false)}
+              />
             )}
             <a
               className="bg-primary/20 dark:bg-primary/[7%] rounded-lg backdrop-blur-[2px] p-1 inline-block"
               href="#"
               onClick={() => setShowCart(true)}
             >
-              <img src={shoppingCart} width="24" height="24" alt="" />
+              <img src={shoppingCart} width="24" height="24" alt="cart" />
+              {cartData.length > 0 && (
+                <span className="absolute -top-1 -right-1 bg-primary text-white text-xs font-semibold rounded-full px-2">
+                  {cartData.length}
+                </span>
+              )}
             </a>
           </li>
         </ul>
