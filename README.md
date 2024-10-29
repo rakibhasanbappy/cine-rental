@@ -1,8 +1,31 @@
-# React + Vite
+# Cine Rental
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a web application that allows users to rent movies and series. The user can view the available movies and series, rent them and view the movies and series they have rented. The user can also view the details of the movies and series.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User can view available movies and series
+- User can rent movies and series by adding them to the cart
+- User can view rented movies and series
+- User can view details of movies and series
+- User can remove rented movies and series from the cart
+- Dark mode and light mode
+
+## Technologies
+
+- React
+- Context API
+- Tailwind CSS
+
+## Setup
+
+To run this project, install it locally using npm:
+
+```bash
+$ npm install
+$ npm run dev
+```
+
+## Demo
+
+Live demo: [Cine Rental](https://cine-rental-pro.vercel.app/)
