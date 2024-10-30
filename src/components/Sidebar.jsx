@@ -1,8 +1,4 @@
-import commingSoon from "../assets/icons/commingSoon.svg";
-import favourite from "../assets/icons/favourite.svg";
-import newRelease from "../assets/icons/newRelease.svg";
 import trending from "../assets/icons/trending.svg";
-import watchLater from "../assets/icons/watchLater.svg";
 
 export default function Sidebar() {
   return (
@@ -17,7 +13,7 @@ export default function Sidebar() {
             <span>Trending</span>
           </a>
         </li>
-        <li>
+        {/* <li>
           <a
             className="flex items-center space-x-2 px-5 py-3.5 rounded-lg"
             href="#"
@@ -52,7 +48,7 @@ export default function Sidebar() {
             <img src={watchLater} width="24" height="24" alt="" />
             <span>Watch Later</span>
           </a>
-        </li>
+        </li> */}
       </ul>
     </aside>
   );

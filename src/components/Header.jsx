@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import moon from "../assets/icons/moon.svg";
 import sun from "../assets/icons/sun.svg";
 import logo from "../assets/logo.svg";
-import ring from "../assets/ring.svg";
 import shoppingCart from "../assets/shopping-cart.svg";
 import { MovieContext, ThemeContext } from "../context";
 import CartDetailsModal from "./CartDetailsModal";
@@ -22,14 +21,14 @@ export default function Header() {
         </a>
 
         <ul className="flex items-center space-x-5">
-          <li>
+          {/* <li>
             <a
               className="bg-primary/20 dark:bg-primary/[7%] rounded-lg backdrop-blur-[2px] p-1 inline-block"
               href="#"
             >
               <img src={ring} width="24" height="24" alt="" />
             </a>
-          </li>
+          </li> */}
           <li>
             <a
               className="bg-primary/20 dark:bg-primary/[7%] rounded-lg backdrop-blur-[2px] p-1 inline-block"
